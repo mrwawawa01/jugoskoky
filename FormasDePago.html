@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juguería Koky</title>
+  <!-- Fuente Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="Style6.css">
+</head>
+<body>
+<!-- HEADER -->
+<header class="navbar">
+      <div class="logo">
+  <a href="Inicio.html">
+    <img src="imagenes/hotbar y fotber/logo.png" alt="Juguería Koky">
+  </a>
+</div>
+ <nav>
+  <ul class="nav-links">
+    <li><a href="Nosotros.html">Nosotros</a></li>
+    <li><a href="Catalogo.html">Catálogo</a></li>
+    <li><a href="Locales.html">Locales</a></li>
+    <li><a href="Contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+  <div class="icons">
+    <img src="imagenes/hotbar y fotber/Botón Lupa.png" alt="Buscar" class="icon">
+    <img src="imagenes/hotbar y fotber/Botón Usuario.png" alt="Usuario" class="icon">
+    <img src="imagenes/hotbar y fotber/Botón canasta.png" alt="Carrito" class="icon">
+  </div>
+
+  <!-- Ola decorativa -->
+  <div class="header-wave">
+    <img src="imagenes/hotbar y fotber/Header.png" alt="Decoración Header">
+  </div>
+</header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-img">
+      <img src="imagenes/hotbar y fotber/banner 1.jpg" alt="Jugos naturales">
+    </div>
+    <div class="titulo-destacado">FORMAS DE PAGO</div>
+ 
+  </section>
+<section class="formas-pago">
+    <div class="pago-container">
+
+      <!-- Columna Izquierda -->
+      <div class="pago-col">
+        <h3>Tarjeta de Crédito o Débito</h3>
+        <p>Con la tarjeta de crédito o débito que elijas</p>
+        <div class="pago-logos">
+          <img src="imagenes/formas de pago/Logo bcp.png" alt="BCP">
+          <img src="imagenes/formas de pago/Logo Visa.png" alt="Visa">
+        </div>
+      </div>
+
+      <!-- Columna Derecha -->
+      <div class="pago-col">
+        <h3>Plin/Yape</h3>
+        <div class="pago-log">
+          <img src="imagenes/formas de pago/Plin logo.png" alt="Plin">
+          <img src="imagenes/formas de pago/Yape logo.png" alt="Yape">
+        </div>
+      </div>
+    </div>
+
+    <p class="pago-texto">También aceptamos pagos en efectivo.</p>
+  </section>
+
+ 
+
+
+
+<!----------------------------------------------------------------- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Marca + Redes -->
+    <div class="footer-brand">
+      <div class="footer-socials">
+        <a href="#"><img src="imagenes/hotbar y fotber/pink 1.png" alt="Instagram"></a>
+        <a href="#"><img src="imagenes/hotbar y fotber/pink 3.png" alt="Facebook"></a>
+        <a href="#"><img src="imagenes/hotbar y fotber/verde 2.png" alt="Tiktok"></a>
+      </div>
+      <div class="footer-logo">
+        <img src="imagenes/hotbar y fotber/logo.png" alt="Juguería Koky">
+      </div>
+    </div>
+
+    <!-- Datos -->
+    <div class="footer-info">
+      <h4>Datos</h4>
+      <p><img src="imagenes/contacto/Ubicación.png" alt="Ubicación" class="icon"> Av. Los Olivos, Lima</p>
+      <p><img src="imagenes/contacto/Correo.png" alt="Correo" class="icon"> jugueria.koky@gmail.com</p>
+      <p><img src="imagenes/contacto/Reloj.png" alt="Horario" class="icon"> Lunes a Domingo: 6:00 am - 4:30 pm</p>
+    </div>
+
+    <!-- Navegación -->
+   <div class="footer-links">
+  <h4>Navegación</h4>
+  <a href="Nosotros.html">Nosotros</a>
+  <a href="Catalogo.html">Catálogo</a>
+  <a href="Locales.html">Locales</a>
+  <a href="Contacto.html">Contacto</a>
+</div>
+
+
+    <!-- Términos -->
+     <div class="footer-terms">
+      <h4>Términos y Condiciones</h4>
+      <a href="FormasDePago.html">Formas de Pago</a>
+      <a href="ComoComprar.html">¿Cómo comprar?</a>
+      <a href="LibroDeReclamaciones.html"> Libro de Reclamaciones</a>
+    </div>
+  </div>
+
+
+  <!-- Onda decorativa -->
+  <div class="footer-wave">
+    <img src="imagenes/hotbar y fotber/Footer.png" alt="Decoración">
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p></p>
+  </div>
+</footer>
+
+
+
+
+
+
+<script>
+  function mostrarSeccion(id, boton) {
+    // Ocultar todas las secciones
+    document.querySelectorAll('.catalogo-seccion').forEach(seccion => {
+      seccion.classList.add('oculto');
+    });
+    document.getElementById(id).classList.remove('oculto');
+
+    // Quitar 'activo' de todos los botones dentro del mismo submenu
+    let submenu = boton.parentNode.querySelectorAll("a");
+    submenu.forEach(link => link.classList.remove("activo"));
+
+    // Agregar 'activo' al botón presionado
+    boton.classList.add("activo");
+  }
+</script>
+
+</body>
+</html>

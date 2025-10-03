@@ -1,0 +1,548 @@
+/* ====== Base ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fffdfb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ====== Navbar ====== */
+.navbar {
+  position: relative; /* necesario para la ola */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.logo img {
+  height: 100px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e91e63;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icons .icon {
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icons .icon:hover {
+  transform: scale(1.1);
+}
+
+/* Ola decorativa debajo del header */
+.header-wave {
+  position: absolute;
+  bottom: -1px; /* la ajusta para que no deje hueco */
+  left: 0;
+  width: 100%;
+  z-index: -1; /* <<< clave: manda la ola atrás */
+}
+
+.header-wave img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ====== Hero ====== */
+.hero {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fffaf6;
+  position: relative; /* <<< clave para que el absolute funcione dentro */
+}
+
+.hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.titulo-destacado {
+  position: absolute;
+  bottom: -25px; /* sigue saliendo un poco del hero */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.8rem 2rem;
+  background: #e91e63;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 10;   /* 🔥 asegura que se vea encima */
+}
+
+
+/* ====== HISTORIA ====== */
+.historia {
+  position: relative;
+  text-align: center;
+  padding: 4rem 10%;
+  background: linear-gradient(to bottom, #fff, #ffe9d6);
+  overflow: hidden; /* evita que frutas se salgan del contenedor */
+}
+
+.titulo-historia {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e91e63;
+  margin-bottom: 1.5rem;
+}
+
+.historia p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.historia-central img {
+  width: 420px;
+  max-width: 90%;
+  margin: 2rem auto 0;
+  display: block;
+}
+
+/* ====== Frutas decorativas ====== */
+.decor {
+  position: absolute;
+  width: 120px;
+  opacity: 0.95;
+}
+
+.decor-naranja {
+  top: 20px;
+  left: 5%;
+  width: 150px;
+}
+
+.decor-platano {
+  bottom: 10%;
+  left: 5%;
+  width: 180px;
+}
+
+.decor-kiwi1 {
+  top: 15%;
+  right: 8%;
+  width: 110px;
+}
+
+.decor-kiwi2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+}
+
+.decor-pina {
+  top: 35%;
+  left: 15%;
+  width: 100px;
+}
+
+.decor-manzana {
+  bottom: 20%;
+  right: 20%;
+  width: 130px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .decor {
+    width: 80px;
+    opacity: 0.8;
+  }
+  .historia-central img {
+    width: 300px;
+  }
+}
+
+/* ====== VISIÓN & MISIÓN ====== */
+.vision-mision {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  padding: 4rem 8%;
+  background: linear-gradient(to bottom, #ffe0cc, #fff);
+}
+
+.vision-mision .card {
+  flex: 1;
+  background: #fffdf7;
+  border-radius: 30px;
+  padding: 2.5rem 2rem 4rem; /* espacio inferior para frutas */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  position: relative;
+}
+
+.vision-mision h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+.vision-mision p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ====== Frutas decorativas ====== */
+.fruta {
+  position: absolute;
+  bottom: -35px;
+  width: 140px;
+  pointer-events: none; /* que no interfiera con clics */
+}
+
+.fruta-platano {
+  left: -25px;
+}
+
+.fruta-manzana {
+  right: -25px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .vision-mision {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .fruta {
+    width: 100px;
+    bottom: -20px;
+  }
+}
+
+/* ====== SERVICIOS ====== */
+.servicios {
+  text-align: center;
+  padding: 4rem 10%;
+  background: #fff;
+}
+
+.servicios h2 {
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.servicios-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.servicio {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+}
+
+.servicio h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.servicio p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* ====== Iconos circulares ====== */
+.icono {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono img {
+  width: 65%;
+  height: auto;
+}
+
+/* Colores de fondo */
+.circulo.naranja {
+  background: #ffffff;
+}
+
+.circulo.rosado {
+  background: #ffffff;
+}
+
+.circulo.verde {
+  background: #ffffff;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .servicios-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* ====== LOCAL ====== */
+.local {
+  text-align: center;
+  padding: 4rem 10%;
+  background: linear-gradient(to bottom, #fff, #ffe9d6);
+}
+
+.local h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.local-galeria {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.foto {
+  flex: 1;
+  max-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Imagen del centro más grande */
+.foto.centro {
+  max-width: 350px;
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+/* Hover efecto */
+.foto:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  z-index: 3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .local-galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foto.centro {
+    max-width: 90%;
+  }
+}
+
+
+/* ====== FOOTER ========================================================================== */
+.footer {
+  background: #fff;
+  color: #333;
+  padding: 3rem 5% 5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Marca: Redes (izq) + Logo (der) */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo img {
+  height: 200px;
+  margin: 0;
+}
+
+/* Redes sociales en columna */
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.footer-socials img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Iconos pequeños */
+.footer-info .icon,
+.footer-terms .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Títulos */
+.footer-info h4,
+.footer-links h4,
+.footer-terms h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+/* Texto columnas */
+.footer-info p,
+.footer-links a,
+.footer-terms a {
+  margin-bottom: 0.5rem;
+  color: #444;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links a:hover,
+.footer-terms a:hover {
+  color: #e91e63;
+  text-decoration: underline;
+}
+
+/* Texto inferior */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  z-index: 2;
+  position: relative;
+}
+
+/* Imagen decorativa */
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.footer-wave img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand {
+    flex-direction: column; /* redes arriba, logo abajo en móvil */
+    align-items: center;
+  }
+
+  .footer-socials {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-info p,
+  .footer-links a,
+  .footer-terms a {
+    justify-content: center;
+  }
+}
